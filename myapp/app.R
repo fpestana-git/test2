@@ -1,9 +1,10 @@
 library(shiny)
 library(DT)
+library(nanoparquet)
 
 # shinylive::export(appdir = "myapp", destdir = "docs")
 # Load the parquet data (adjust the path to your file)
-ensembl_data <- readRDS("data/ensembl98.rds")
+ensembl_data <- read.csv("ensembl98.csv")
 
 
 ui <- navbarPage(
