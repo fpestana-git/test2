@@ -1,36 +1,47 @@
 library(shiny)
 
-# Define UI for app that draws a histogram ----
-ui <- fluidPage(
+# # Define UI for app that draws a histogram ----
+# ui <- fluidPage(
+# 
+#   # App title ----
+#   titlePanel("Hello Shiny!"),
+# 
+#   # Sidebar layout with input and output definitions ----
+#   sidebarLayout(
+# 
+#     # Sidebar panel for inputs ----
+#     sidebarPanel(
+# 
+#       # Input: Slider for the number of bins ----
+#       sliderInput(inputId = "bins",
+#                   label = "Number of bins:",
+#                   min = 1,
+#                   max = 50,
+#                   value = 30)
+# 
+#     ),
+# 
+#     # Main panel for displaying outputs ----
+#     mainPanel(
+# 
+#       # Output: Histogram ----
+#       plotOutput(outputId = "distPlot")
+# 
+#     )
+#   )
+# )
 
-  # App title ----
-  titlePanel("Hello Shiny!"),
-
-  # Sidebar layout with input and output definitions ----
-  sidebarLayout(
-
-    # Sidebar panel for inputs ----
-    sidebarPanel(
-
-      # Input: Slider for the number of bins ----
-      sliderInput(inputId = "bins",
-                  label = "Number of bins:",
-                  min = 1,
-                  max = 50,
-                  value = 30)
-
-    ),
-
-    # Main panel for displaying outputs ----
-    mainPanel(
-
-      # Output: Histogram ----
-      plotOutput(outputId = "distPlot")
-
-    )
+ui <- navbarPage(
+  "AstroMap",   
+  tabPanel("Overview", "Here you can explore the intega"),
+  tabPanel("RNA-seq", "rna seq"),
+  tabPanel("Spatial", "spatial"),
+  navbarMenu("Regional", 
+             tabPanel("Isocortex", "four-a"),
+             tabPanel("HPF", "four-b"),
+             tabPanel("OLF", "four-c")
   )
 )
-
 # Define server logic required to draw a histogram ----
 server <- function(input, output) {
 
