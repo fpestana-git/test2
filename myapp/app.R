@@ -1,15 +1,20 @@
 library(shiny)
 library(DT)
+#library(shinylive)
 #library(here)
 #library(nanoparquet)
 
 # shinylive::export(appdir = "myapp", destdir = "docs")
+# setwd("~/OneDrive - KU Leuven/LabFiles/Projects/0002_AstroMAP/AstroMAP/08_Webtool/test2")
+# httpuv::runStaticServer("docs/", port = 8008)
 # Load the parquet data (adjust the path to your file)
 #ensembl_data <- read.csv("docs/ensembl98.csv")
 
 
 #ensembl_data <- read.csv("https://github.com/fpestana-git/test2/blob/main/docs/ensembl98.csv")
-ensembl_data <- read.csv("https://raw.githubusercontent.com/fpestana-git/test2/main/docs/ensembl98.csv")
+#ensembl_data <- read.csv("https://raw.githubusercontent.com/fpestana-git/test2/main/docs/ensembl98.csv")
+
+ensembl_data <- read.csv("https://raw.githubusercontent.com/fpestana-git/test2/refs/heads/main/docs/ensembl98.csv")
 
 #ensembl_data <- mtcars
 #ensembl_data <- read.csv(here("docs", "ensembl98.csv"))
@@ -32,9 +37,9 @@ ui <- navbarPage(
 server <- function(input, output, session) {
   
   # Render the RNA-seq data table
-  output$rnaTable <- renderDT({
-    datatable(ensembl_data, options = list(pageLength = 10))
-  })
+  # output$rnaTable <- renderDT({
+  #   datatable(ensembl_data, options = list(pageLength = 10))
+  # })
   
 }
 
