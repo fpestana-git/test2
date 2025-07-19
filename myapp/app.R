@@ -1,12 +1,18 @@
 library(shiny)
 library(DT)
-library(here)
+#library(here)
 #library(nanoparquet)
 
 # shinylive::export(appdir = "myapp", destdir = "docs")
 # Load the parquet data (adjust the path to your file)
 #ensembl_data <- read.csv("docs/ensembl98.csv")
-ensembl_data <- read.csv(here("docs", "ensembl98.csv"))
+
+
+#ensembl_data <- read.csv("https://github.com/fpestana-git/test2/blob/main/docs/ensembl98.csv")
+ensembl_data <- read.csv("https://raw.githubusercontent.com/fpestana-git/test2/main/docs/ensembl98.csv")
+
+#ensembl_data <- mtcars
+#ensembl_data <- read.csv(here("docs", "ensembl98.csv"))
 
 ui <- navbarPage(
   "AstroMap",   
